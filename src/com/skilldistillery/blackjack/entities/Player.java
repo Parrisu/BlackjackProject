@@ -1,15 +1,33 @@
 package com.skilldistillery.blackjack.entities;
 
-public class Player extends Hand {
-	
+public class Player {
 	
 	protected Hand hand;
-
-	@Override
-	public int getHandValue() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	
+	
+	public Player(){
+		this.hand = new BlackjackHand();
 	}
+	
+
+	public int getHandValue() {
+		int value = 0;
+		value = getHand().getHandValue();
+		
+		return value;
+	}
+
+	public Hand getHand() {
+		return hand;
+	}
+	
+	public Card getCardFromHand(int i) {
+		Card getCard = hand.cards.get(i);
+		return getCard;
+	}
+
+	
 	
 	
 	
